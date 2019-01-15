@@ -128,99 +128,99 @@ function testCalculateRemainder2() {
     })
 }
 
-function distinctValues(list) {
-    arr = list.split(' ');
-    let result = [];
+// function distinctValues(list) {
+//     arr = list.split(' ');
+//     let result = [];
 
-    for (i = 0; i < arr.length; i++) {
-        if (!result.includes(arr[i])) {
-            result.push(arr[i]);
-        }
-    }
-    return result.join(' ')
-}
+//     for (i = 0; i < arr.length; i++) {
+//         if (!result.includes(arr[i])) {
+//             result.push(arr[i]);
+//         }
+//     }
+//     return result.join(' ')
+// }
 
-function testDistinctValues1() {
-    let result = distinctValues("1 3 5 3 7 3 1 1 5")
-    console.assert(result === "1 3 5 7", {
-        "function": "distinctValues('1 3 5 3 7 3 1 1 5)",
-        "expected": "1 3 5 7",
-        "result": result
-    })
-}
+// function testDistinctValues1() {
+//     let result = distinctValues("1 3 5 3 7 3 1 1 5")
+//     console.assert(result === "1 3 5 7", {
+//         "function": "distinctValues('1 3 5 3 7 3 1 1 5)",
+//         "expected": "1 3 5 7",
+//         "result": result
+//     })
+// }
 
-function testDistinctValues2() {
-    let result = distinctValues("7 10 5 10 3 5 7")
-    console.assert(result === "7 10 5 3", {
-        "function": "distinctValues('7 10 5 10 3 5 7')",
-        "expected": "7 10 5 3",
-        "result": result
-    })
-}
+// function testDistinctValues2() {
+//     let result = distinctValues("7 10 5 10 3 5 7")
+//     console.assert(result === "7 10 5 3", {
+//         "function": "distinctValues('7 10 5 10 3 5 7')",
+//         "expected": "7 10 5 3",
+//         "result": result
+//     })
+// }
 
-function countValues(list) {
-    arr = list.split(' ');
+// function countValues(list) {
+//     arr = list.split(' ');
 
-    let counts = {};
-    let values = [];
-    let result = '';
+//     let counts = {};
+//     let values = [];
+//     let result = '';
 
-    for (i = 0; i < arr.length; i++) {
-        if (!values.includes(arr[i])) {
-            values.push(arr[i]);
-            counts[arr[i]] = 1;
-        } else {
-            counts[arr[i]] =  counts[arr[i]] + 1;
-        }
-    }
+//     for (i = 0; i < arr.length; i++) {
+//         if (!values.includes(arr[i])) {
+//             values.push(arr[i]);
+//             counts[arr[i]] = 1;
+//         } else {
+//             counts[arr[i]] =  counts[arr[i]] + 1;
+//         }
+//     }
 
-    for(let i = 0; i < values.length; i++){
-        result = result + values[i] + '(' + counts[values[i]] + ') '
-    }
+//     for(let i = 0; i < values.length; i++){
+//         result = result + values[i] + '(' + counts[values[i]] + ') '
+//     }
     
-    return result.trim();
-}
+//     return result.trim();
+// }
 
-function testCountValues1() {
-    let result = countValues("1 3 5 3 7 3 1 1 5");
-    console.assert(result === "1(3) 3(3) 5(2) 7(1)", {
-        "function": "countValues('1 3 5 3 7 3 1 1 5')",
-        "expected": "1(3) 3(3) 5(2) 7(1)",
-        "result": result
-    })
-}
+// function testCountValues1() {
+//     let result = countValues("1 3 5 3 7 3 1 1 5");
+//     console.assert(result === "1(3) 3(3) 5(2) 7(1)", {
+//         "function": "countValues('1 3 5 3 7 3 1 1 5')",
+//         "expected": "1(3) 3(3) 5(2) 7(1)",
+//         "result": result
+//     })
+// }
 
-function testCountValues2() {
-    let result = countValues("7 10 5 10 3 5 7");
-    console.assert(result === "7(2) 10(2) 5(2) 3(1)", {
-        "function": "countValues('7 10 5 10 3 5 7')",
-        "expected": "7(2) 10(2) 5(2) 3(1)",
-        "result": result
-    })
-}
+// function testCountValues2() {
+//     let result = countValues("7 10 5 10 3 5 7");
+//     console.assert(result === "7(2) 10(2) 5(2) 3(1)", {
+//         "function": "countValues('7 10 5 10 3 5 7')",
+//         "expected": "7(2) 10(2) 5(2) 3(1)",
+//         "result": result
+//     })
+// }
 
-function evaluateExpression(expression, values){
-    let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    for(i = 0; i < alphabet.length; i++){
-        expression = expression.replace(alphabet[i],values[alphabet[i]])
-    }
-    return eval(expression);
-}
+// function evaluateExpression(expression, values){
+//     let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+//     for(i = 0; i < alphabet.length; i++){
+//         expression = expression.replace(alphabet[i],values[alphabet[i]])
+//     }
+//     return eval(expression);
+// }
 
-function testEvaluateExpression1() {
-    let result = evaluateExpression("a + b + c - d", {a: 1, b: 7, c: 3, d: 14});
-    console.assert(result === -3, {
-        "function": "evaluateExpression('a + b + c - d')",
-        "expected": -3,
-        "result": result
-    })
-}
+// function testEvaluateExpression1() {
+//     let result = evaluateExpression("a + b + c - d", {a: 1, b: 7, c: 3, d: 14});
+//     console.assert(result === -3, {
+//         "function": "evaluateExpression('a + b + c - d')",
+//         "expected": -3,
+//         "result": result
+//     })
+// }
 
-function testEvaluateExpression2() {
-    let result = evaluateExpression("a - b + c - d", {a: 1, b: 7, c: 3, d: 14});
-    console.assert(result === -17, {
-        "function": "evaluateExpression('a - b + c - d')",
-        "expected": -17,
-        "result": result
-    })
-}
+// function testEvaluateExpression2() {
+//     let result = evaluateExpression("a - b + c - d", {a: 1, b: 7, c: 3, d: 14});
+//     console.assert(result === -17, {
+//         "function": "evaluateExpression('a - b + c - d')",
+//         "expected": -17,
+//         "result": result
+//     })
+// }
